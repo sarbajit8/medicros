@@ -10,8 +10,9 @@ let razorpayInstance = null;
 // Helper function to get/create Razorpay instance
 const getRazorpay = () => {
   const key_id = process.env.RAZORPAY_KEY_ID || process.env.RAZOR_PAY_KEY;
-  const key_secret = "R68sqoOkZRy0LdTwHpygjh6H" || process.env.RAZOR_PAY_SECRET;
+  const key_secret = "j4EhnyQaUqZPOIVLiW2xrSjh" || process.env.RAZOR_PAY_SECRET;
   
+
   if (!key_id || !key_secret) {
     throw new Error("Razorpay credentials missing. Please check your environment variables.");
   }

@@ -93,6 +93,8 @@ import DeleveryNotification from './components/delivery-view/deleveryNotificatio
 import Testimonials from './pages/admin-view/Testimonials'
 import TermsAndConditions from './pages/shopping-view/trmsandconditions'
 import PrivacyPolicy from './pages/shopping-view/privacypolicy'
+import Refundpolicy from './components/shopping-view/refundpolicy'
+import RefundPolicy from './components/shopping-view/refundpolicy'
 
 
 
@@ -266,6 +268,7 @@ const App = () => {
 
     <Route path="termsandconditions" element={<TermsAndConditions/>} /> 
     <Route path="privacypolicy" element={<PrivacyPolicy/>} /> 
+    <Route path="refundpolicy" element={<RefundPolicy/>} /> 
 
     
 

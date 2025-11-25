@@ -71,6 +71,8 @@ const Footer = () => {
               <li><a href="./contactus" className="hover:underline">Contact</a></li>
               <li><a href="./termsandconditions" className="hover:underline">Terms & Conditions</a></li>
               <li><a href="./privacypolicy" className="hover:underline">Privacy Policy</a></li>
+              <li><a href="./refundpolicy" className="hover:underline">Refund Policy</a></li>
+
             </ul>
           </div>
 
@@ -124,7 +126,7 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className="border-t border-white/30 mt-6 pt-4 text-center text-xs text-white/80">
-          © 2025 Medicross Remedies™ (OPC) Pvt. Ltd. • Created by{" "}
+          © 2025 Medicross Remedies* • Created by{" "}
           <a href="https://rasaap.in/" className="underline">Rasaap Info Solutions</a>
         </div>
       </div>
