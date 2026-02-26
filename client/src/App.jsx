@@ -158,7 +158,7 @@ const App = () => {
       />
   <Route path='/auth' element={
       <CheckAuth >
-        <AuthLayout />
+        <AuthLayout /> 
       </CheckAuth>
      }>
     <Route path='login' element={<AuthLogin />} />

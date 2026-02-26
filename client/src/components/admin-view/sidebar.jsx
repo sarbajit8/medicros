@@ -129,12 +129,12 @@ const adminSidebarMenuItems = [
     path: "/admin/career",
     icon: <FaSortNumericDownAlt />,
   },
-  //  {
-  //   id: "testimonials",
-  //   label: "Testimonials",
-  //   path: "/admin/testimonials",
-  //   icon: <FaComment />,
-  // },
+   {
+    id: "testimonials",
+    label: "Testimonials",
+    path: "/admin/testimonials",
+    icon: <FaComment />,
+  },
 ];
 
 function MenuItems({ setOpen }) {
