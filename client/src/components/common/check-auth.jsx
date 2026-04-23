@@ -29,7 +29,7 @@ function CheckAuth({ children }) {
     "/shop/pcd-manufacturer", "/shop/freeproducts", "/shop/margin", "/shop/generic",
     "/shop/discount", "/shop/career", "/shop/quickrequirement", "/shop/available-products",
     "/shop/productdetailpage","/shop/howtoregister","/shop/termsandconditions","/shop/privacypolicy"
-    ,"/shop/refundpolicy"
+    ,"/shop/refundpolicy","/shop/student-documents"
   ];
 
   const isPublic = publicShopPaths.some((path) =>

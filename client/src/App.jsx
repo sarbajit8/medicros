@@ -91,6 +91,8 @@ import Notification from './pages/admin-view/notification'
 import EmployeeNotification from './components/employee-view/employee-notification'
 import DeleveryNotification from './components/delivery-view/deleveryNotifications'
 import Testimonials from './pages/admin-view/Testimonials'
+import AdminStudents from './pages/admin-view/students'
+import StudentDownload from './pages/shopping-view/studentDownload'
 import TermsAndConditions from './pages/shopping-view/trmsandconditions'
 import PrivacyPolicy from './pages/shopping-view/privacypolicy'
 import Refundpolicy from './components/shopping-view/refundpolicy'
@@ -213,6 +215,7 @@ const App = () => {
 
     <Route path="testimonials" element={<Testimonials/>}/>
     <Route path="notification" element={<Notification/>}/>
+    <Route path="students" element={<AdminStudents/>}/>
 
 
 
@@ -269,6 +272,7 @@ const App = () => {
     <Route path="termsandconditions" element={<TermsAndConditions/>} /> 
     <Route path="privacypolicy" element={<PrivacyPolicy/>} /> 
     <Route path="refundpolicy" element={<RefundPolicy/>} /> 
+    <Route path="student-documents" element={<StudentDownload/>} />
 
     
 

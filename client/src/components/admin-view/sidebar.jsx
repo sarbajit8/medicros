@@ -11,6 +11,7 @@ import {
   User2Icon,
   UserCheck2,
   UserRound,
+  GraduationCap,
 } from "lucide-react";
 import { Fragment, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -134,6 +135,12 @@ const adminSidebarMenuItems = [
     label: "Testimonials",
     path: "/admin/testimonials",
     icon: <FaComment />,
+  },
+  {
+    id: "students",
+    label: "Students",
+    path: "/admin/students",
+    icon: <GraduationCap />,
   },
 ];
 

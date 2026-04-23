@@ -179,6 +179,14 @@ function MenuItems({ setIsSheetOpen }) {
         </Label>
 
         <Label
+          onClick={() => handleNavigate("../shop/student-documents")}
+          className="px-4 py-3 text-white font-medium cursor-pointer hover:bg-white/10 rounded-lg transition-all duration-300 relative group"
+        >
+          Student Docs
+          <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-white group-hover:w-3/4 transition-all duration-300"></span>
+        </Label>
+
+        <Label
           onClick={() => handleNavigate("../shop/search")}
           className="px-4 py-3 text-white font-medium cursor-pointer hover:bg-white/10 rounded-lg transition-all duration-300 relative group"
         >
@@ -323,6 +331,16 @@ function MenuItems({ setIsSheetOpen }) {
             className="block p-3 text-gray-700 font-medium cursor-pointer hover:bg-[#0092B5]/10 hover:text-[#0092B5] rounded-lg transition-all"
           >
             {t("ContactUs")}
+          </Label>
+          <hr className="border-t border-gray-300" />
+        </div>
+
+        <div>
+          <Label
+            onClick={() => handleNavigate("../shop/student-documents")}
+            className="block p-3 text-gray-700 font-medium cursor-pointer hover:bg-[#0092B5]/10 hover:text-[#0092B5] rounded-lg transition-all"
+          >
+            Student Docs
           </Label>
           <hr className="border-t border-gray-300" />
         </div>

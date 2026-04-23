@@ -64,6 +64,7 @@ import notificationSlice from "./admin/notification-slice"
 
 
 import TestimonialsSlice from "./shop/testimonials-slice"
+import adminStudentSlice from "./admin/student-slice"
 
 
 
@@ -123,6 +124,7 @@ const store = configureStore({
        notification:notificationSlice,
 
        testimonials:TestimonialsSlice,
+       adminStudent: adminStudentSlice,
     }
 })
 

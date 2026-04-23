@@ -81,6 +81,7 @@ const notificationRoutes = require("./routes/admin/notification-routes");
 
 
 const shopTestimonialsRouter = require("./routes/shop/testimonial-routes");
+const studentRouter = require("./routes/admin/student-routes");
                                                               
 
 
@@ -106,7 +107,7 @@ app.use(
 ],
         // origin: "http://localhost:5173",
         // origin:"*", 
-        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
         allowedHeaders: [
             'Content-Type',
             'Authorization',
@@ -192,6 +193,7 @@ app.use("/api/admin/bsaremarks", bsaRemerksRoutes);
 app.use("/api/admin/alert", alertRoutes);
 app.use("/api/admin/deleveryalerts", deleveryAlertRoutes);
 app.use("/api/admin/notification", notificationRoutes);
+app.use("/api/admin/student", studentRouter);
 
 
 
