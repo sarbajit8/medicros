@@ -207,11 +207,20 @@ const Career = () => {
           resetForm();
         }
       } else {
-        toast({ title: "Submission error", description: response.message, variant: "destructive" });
+        console.error("Submission error details:", response);
+        toast({ 
+          title: "Submission error", 
+          description: response.message + (response.error ? `: ${response.error}` : ''), 
+          variant: "destructive" 
+        });
       }
     } catch (error) {
-      toast({ title: "Error submitting application", variant: "destructive" });
       console.error("Submission error:", error);
+      toast({ 
+        title: "Error submitting application", 
+        description: error.message || "Unknown error",
+        variant: "destructive" 
+      });
     }
   };
 

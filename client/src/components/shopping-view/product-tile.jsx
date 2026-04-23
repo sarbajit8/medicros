@@ -71,6 +71,9 @@ function ShoppingProductTile({
 >
   {product?.title}
 </h2>
+          {product?.composition && (
+            <p className="text-xs text-gray-500 mb-2 line-clamp-2">{product.composition}</p>
+          )}
           <div className="flex justify-between items-center mb-2">
             <span className="text-[16px] text-muted-foreground">
               {categoryOptionsMap[product?.category]}

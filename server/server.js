@@ -1,3 +1,6 @@
+// Load environment variables FIRST before any other imports
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require("path");
@@ -83,9 +86,6 @@ const shopTestimonialsRouter = require("./routes/shop/testimonial-routes");
 
 
 
-
-// Load environment variables from .env file
-require('dotenv').config();
 
 // Connect to the database
 mongoose.connect(process.env.MONGO_URI)

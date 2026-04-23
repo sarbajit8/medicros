@@ -9,19 +9,28 @@ let razorpayInstance = null;
 
 // Helper function to get/create Razorpay instance
 const getRazorpay = () => {
-  const key_id = process.env.RAZORPAY_KEY_ID || process.env.RAZOR_PAY_KEY;
-  const key_secret = "j4EhnyQaUqZPOIVLiW2xrSjh" || process.env.RAZOR_PAY_SECRET;
+  const key_id = process.env.RAZORPAY_KEY_ID;
+  const key_secret = process.env.RAZORPAY_KEY_SECRET;
   
+  console.log("Razorpay credentials check:", {
+    key_id_exists: !!key_id,
+    key_id_length: key_id?.length || 0,
+    key_secret_exists: !!key_secret,
+    key_secret_length: key_secret?.length || 0
+  });
 
   if (!key_id || !key_secret) {
+    console.error("Razorpay credentials missing:", { key_id: !!key_id, key_secret: !!key_secret });
     throw new Error("Razorpay credentials missing. Please check your environment variables.");
   }
 
   if (!razorpayInstance) {
+    console.log("Creating new Razorpay instance...");
     razorpayInstance = new Razorpay({
       key_id: key_id,
       key_secret: key_secret
     });
+    console.log("Razorpay instance created successfully");
   }
   return razorpayInstance;
 };
@@ -67,7 +76,16 @@ const addCareer = async (req, res) => {
     if (type.toLowerCase() === "internship") {
       try {
         const { amount, tierId, planName } = durationToPayment(duration);
+        console.log("Creating Razorpay order with:", { amount, tierId, planName, duration });
+        
         const razorpay = getRazorpay();
+        console.log("Razorpay instance created successfully");
+        
+        console.log("Calling razorpay.orders.create with:", {
+          amount: amount * 100,
+          currency: "INR",
+          receipt: careerDoc._id.toString()
+        });
         
         const order = await razorpay.orders.create({
           amount: amount * 100, // Convert to paise
@@ -79,6 +97,8 @@ const addCareer = async (req, res) => {
             planName
           }
         });
+
+        console.log("Razorpay order created successfully:", order.id);
 
         // Update career with payment details
         careerDoc.amount = amount;
@@ -95,16 +115,31 @@ const addCareer = async (req, res) => {
             amount,
             currency: "INR",
             razorpayOrderId: order.id,
-            razorpayKeyId: process.env.RAZORPAY_KEY_ID || process.env.RAZOR_PAY_KEY,
+            razorpayKeyId: process.env.RAZORPAY_KEY_ID,
             order
           }
         });
       } catch (error) {
-        console.error("Payment creation error:", error);
+        console.error("Payment creation error (full error object):", error);
+        console.error("Error type:", typeof error);
+        console.error("Error constructor:", error?.constructor?.name);
+        console.error("Payment creation error details:", {
+          message: error.message,
+          name: error.name,
+          stack: error.stack,
+          statusCode: error.statusCode,
+          error: error.error,
+          description: error.description,
+          response: error.response?.data || error.response,
+          fullError: JSON.stringify(error, null, 2)
+        });
         return res.status(500).json({
           success: false,
           message: "Failed to create payment order",
-          error: error.message
+          error: error.message || "Unknown error",
+          errorName: error.name,
+          errorType: typeof error,
+          details: error.response?.data || error.error || null
         });
       }
     }
@@ -121,9 +156,15 @@ const verifyPayment = async (req, res) => {
   try {
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body;
 
+    const key_secret = process.env.RAZORPAY_KEY_SECRET;
+    
+    if (!key_secret) {
+      return res.status(500).json({ success: false, message: "Razorpay secret key not configured" });
+    }
+
     const sign = razorpay_order_id + "|" + razorpay_payment_id;
     const expectedSign = crypto
-      .createHmac("sha256", "R68sqoOkZRy0LdTwHpygjh6H")
+      .createHmac("sha256", key_secret)
       .update(sign.toString())
       .digest("hex");
 

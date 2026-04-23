@@ -55,6 +55,9 @@ const SpecialProducts = () => {
                 <Link to={`../productdetailpage/${product?._id}`}>
                   <img src={product.image || img} alt={product.title} className="w-full h-[150px] object-cover" />
                   <h3 className="mt-1 text-sm font-bold text-gray-700 break-words">{product.title}</h3>
+                  {product.composition && (
+                    <p className="text-xs text-gray-500 mt-1 line-clamp-2">{product.composition}</p>
+                  )}
                   <div className="mt-1 text-center">
                     <span className="text-cyan-600 font-bold text-lg">₹{product.salePrice || product.price}</span>
                     {product.salePrice > 0 && (
@@ -87,6 +90,9 @@ const SpecialProducts = () => {
                     className="w-full h-[200px] object-cover rounded-md" // Set fixed height and width
                   />
                   <h3 className="mt-2 text-sm font-semibold text-gray-700 break-words">{product.title}</h3>
+                  {product.composition && (
+                    <p className="text-xs text-gray-500 mt-1 line-clamp-2">{product.composition}</p>
+                  )}
                   <div className="mt-1 flex items-center justify-between">
                     <span className="text-cyan-600 font-bold text-lg">₹{product.salePrice || product.price}</span>
                     {product.salePrice > 0 && <span className="text-gray-500 line-through text-lg">₹{product.price}</span>}

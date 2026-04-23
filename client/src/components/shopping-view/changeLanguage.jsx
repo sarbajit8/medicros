@@ -28,19 +28,19 @@ const ChangeLanguage = () => {
                 className="block w-full text-left px-4 py-2 hover:bg-gray-200"
                 onClick={() => changeLanguage("en")}
               >
-                🇬🇧 English
+                English
               </button>
               <button
                 className="block w-full text-left px-4 py-2 hover:bg-gray-200"
                 onClick={() => changeLanguage("hi")}
               >
-                🇮🇳 हिंदी
+                हिंदी
               </button>
               <button
                 className="block w-full text-left px-4 py-2 hover:bg-gray-200"
                 onClick={() => changeLanguage("bn")}
               >
-                🇧🇩 বাংলা
+                বাংলা
               </button>
             </div>
           )}

@@ -30,23 +30,23 @@ const Footer = () => {
             </p>
             <p className="mt-2 font-bold">Follow Us On -</p>
             <div className="flex gap-2 mt-1 flex-wrap justify-center lg:justify-start items-center">
-              <a href="https://www.instagram.com/medicrossremedies/" className="p-2 rounded-full bg-white/20 hover:bg-white/30">
-                <Instagram className="w-4 h-4 text-white" />
+              <a href="https://www.instagram.com/medicrossremedies/" className="p-2 rounded-full bg-white hover:bg-gray-100 transition-colors">
+                <Instagram className="w-4 h-4 text-[#E4405F]" />
               </a>
-              <a href="https://www.facebook.com/MedicrossRemediesOPC" className="p-2 rounded-full bg-white/20 hover:bg-white/30">
-                <Facebook className="w-4 h-4 text-white" />
+              <a href="https://www.facebook.com/MedicrossRemediesOPC" className="p-2 rounded-full bg-white hover:bg-gray-100 transition-colors">
+                <Facebook className="w-4 h-4 text-[#1877F2]" />
               </a>
-              <a href="https://www.youtube.com/@medicrossremedies" className="p-2 rounded-full bg-white/20 hover:bg-white/30">
-                <Youtube className="w-4 h-4 text-white" />
+              <a href="https://www.youtube.com/@medicrossremedies" className="p-2 rounded-full bg-white hover:bg-gray-100 transition-colors">
+                <Youtube className="w-4 h-4 text-[#FF0000]" />
               </a>
-              <a href="https://www.linkedin.com/in/medicrossremedies/" className="p-2 rounded-full bg-white/20 hover:bg-white/30">
-                <Linkedin className="w-4 h-4 text-white" />
+              <a href="https://www.linkedin.com/in/medicrossremedies/" className="p-2 rounded-full bg-white hover:bg-gray-100 transition-colors">
+                <Linkedin className="w-4 h-4 text-[#0A66C2]" />
               </a>
-              <a href="https://x.com/medicross2020" className="p-2 rounded-full bg-white/20 hover:bg-white/30">
-                <X className="w-4 h-4 text-white" />
+              <a href="https://x.com/medicross2020" className="p-2 rounded-full bg-white hover:bg-gray-100 transition-colors">
+                <X className="w-4 h-4 text-black" />
               </a>
-              <a href="https://g.co/kgs/jWXGW83" className="p-2 rounded-full bg-white/20 hover:bg-white/30">
-                <FaGoogle className="w-4 h-4 text-white" />
+              <a href="https://g.co/kgs/jWXGW83" className="p-2 rounded-full bg-white hover:bg-gray-100 transition-colors">
+                <FaGoogle className="w-4 h-4 text-[#4285F4]" />
               </a>
 
               {/* ✅ QR code right after social icons */}

@@ -85,6 +85,9 @@ const EthicalSlider = () => {
                     </Link>
                     <div className="p-4">
                       <h3 className="text-lg font-semibold text-gray-800 truncate">{product.title}</h3>
+                      {product.composition && (
+                        <p className="text-xs text-gray-500 mt-1 line-clamp-2">{product.composition}</p>
+                      )}
                       <div className="flex justify-between text-sm">
                         <span className="text-blue-600 font-bold text-lg">
                           ₹{product.salePrice || product.price}
@@ -143,6 +146,9 @@ const EthicalSlider = () => {
                     <h3 className="text-sm font-semibold text-gray-800 truncate">
                       {product.title}
                     </h3>
+                    {product.composition && (
+                      <p className="text-xs text-gray-500 mt-1 line-clamp-2">{product.composition}</p>
+                    )}
                     <div className="text-sm font-bold text-blue-600 flex flex-col justify-between">
                       <span>₹{product.salePrice || product.price}</span>
                       {product.salePrice > 0 && (
